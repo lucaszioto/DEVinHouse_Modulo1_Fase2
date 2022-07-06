@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(/Ex-SEM01/assets/images/background-image.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 40px;
+}
+
+h1 {
+  font-family: Verdana;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  background-image: url(/Ex-SEM01/assets/images/background-image.jpg);
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255);
+  background-size: 100%;
+}
+
+p {
+  font-size: 14px;
+}
+
+input {
+  border: none;
+  border-style: solid;
+  padding: 10px 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border-width: 2px;
+  color: black;
+  background-color: cyan;
+  cursor: pointer;
+}
+
+.images {
+  display: flex;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: cyan;
+  color: black;
+  transition: 300ms;
+}
+
+.main {
+  margin-top: 30px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 2rem;
+  background-color: cyan;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer a {
+  color: darkmagenta;
+  text-decoration: none;
+}
+
+.heart {
+  color: red;
+}
+
+.footer p {
+  margin: 0;
+  padding: 3rem;
+}
