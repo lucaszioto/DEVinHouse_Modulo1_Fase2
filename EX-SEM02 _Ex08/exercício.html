@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body onload="calculaAno()">
+  <div style="
+        display: flex;
+        /* height: 100vh; */
+        justify-content: space-between;
+        flex-direction: column;
+      ">
+
+    <div>
+      <header>
+        <h1>titulo</h1>
+      </header>
+
+
+      <main>
+        <!-- Inicio Exercicio 9 -->
+        <h1>Exercicio 9</h1>
+        <div class="container">
+          <button onclick="decrementar()">-</button>
+          <p id="resultado">0</p>
+          <button onclick="incrementar()">+</button>
+        </div>
+        <!-- Fim Exercicio 9 -->
+
+        <div>
+          <hr />
+        </div>
+
+        <!-- Inicio Exercicio 10 -->
+        <h1>Exercicio 10</h1>
+        <h1 id="titulo">Título da página</h1>
+        <div class="container">
+          <input id="inputTitulo" placeholder="Conteúdo do título" />
+          <button onclick="alterarTitulo()">Alterar título</button>
+        </div>
+        <!-- Fim Exercicio 10 -->
+      </main>
+    </div>
+
+    <footer>
+      <h1></h1>
+    </footer>
+  </div>
+</body>
+<script src="./exercícios.js"></script>
+
+</html>
