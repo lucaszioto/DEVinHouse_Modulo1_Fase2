@@ -1,0 +1,296 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-width: 100vh;
+  background: rgb(17, 18, 18);
+  background: linear-gradient(
+    90deg,
+    rgba(17, 18, 18, 1) 0%,
+    rgba(46, 48, 48, 1) 35%,
+    rgba(82, 82, 85, 1) 100%
+  );
+  color: #fff;
+  font-family: sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.3em;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1em;
+}
+
+button {
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-weight: bold;
+  padding: 16px 24px;
+  text-transform: uppercase;
+}
+
+header {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2em;
+}
+
+main {
+  padding: 3% 5%;
+}
+
+footer {
+  background-color: rgb(0, 0, 0);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  font-size: 0.8em;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav li {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.nav li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  color: #7c1ff5;
+}
+
+.title-section {
+  margin: 20px 0;
+}
+
+.title-section {
+  margin: 20px 0;
+}
+
+.card {
+  display: flex;
+  border-radius: 1em;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+  flex: 3;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-img img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  border-radius: 1em 0 0 1em;
+}
+
+.card-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+  padding: 30px;
+}
+
+.card-info-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-info p {
+  font-size: 1rem;
+  color: #626567;
+  margin: 0;
+}
+
+.card-info span {
+  font-size: 0.8rem;
+  color: #626567;
+}
+
+.card-info .container-date .text-red {
+  color: rgb(180, 7, 206);
+}
+
+.container-date {
+  display: flex;
+  gap: 10px;
+}
+
+.card-info-footer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.card-info-footer button {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  border: 1px solid #424949;
+  color: #424949;
+  background-color: transparent;
+}
+
+.card-info-footer button:hover {
+  background-color: #f2f3f4;
+}
+
+.list-events {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 20px;
+}
+
+.list-events .card {
+  width: 30%;
+  flex-direction: column;
+}
+
+.list-events img {
+  border-radius: 1em 1em 0 0;
+}
+
+.list-events h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px 12px 0 0;
+  background-color: #1f0139;
+}
+
+.about p,
+.believe p,
+.want p {
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.believe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #7c1ff5;
+}
+
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  gap: 20px;
+}
+
+.input-form,
+.textarea-form {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 0.5px solid #909497;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.textarea-form:focus,
+.input-form:focus {
+  outline: none;
+}
+
+.form-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-send {
+  border: 1px solid #000;
+  background-color: #1f0139;
+  color: white;
+}
+
+.button-send:hover {
+  background-color: #7c1ff5;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+  main {
+    padding: 3% 2%;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .card-img img {
+    border-radius: 1em 1em 0 0;
+  }
+
+  .list-events {
+    flex-direction: column;
+  }
+
+  .list-events .card {
+    width: 100%;
+  }
+} 
