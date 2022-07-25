@@ -46,7 +46,7 @@ const adicionaOpcao = (value, text) => {
 };
 
 const populaSelect = () => {
-  selectConta.innerHTML = "";
+  selectConta.innerHTML = "";F
   adicionaOpcao("0", "(selecione)");
 
   contasClientes
@@ -57,118 +57,130 @@ const populaSelect = () => {
 };
 
 const salvarContas = (array) => {
-    localStorage.setItem(LOCAL_STORAGE_CONTAS_CLIENTES, JSON.stringify(array));
+  localStorage.setItem(LOCAL_STORAGE_CONTAS_CLIENTES, JSON.stringify(array));
 };
 
 const buscarContas = (array) => {
-    contas = localStorage.getItem(LOCAL_STORAGE_CONTAS_CLIENTES);
-    if (contas) {
-        contasClientes = JSON.parse(contas);
-    }
+  contas = localStorage.getItem(LOCAL_STORAGE_CONTAS_CLIENTES);
+  if (contas) {
+    contasClientes = JSON.parse(contas);
+  }
 };
 
 const onLoadBody = () => {
-    buscarContas();
-    populaSelect();
+  buscarContas();
+  populaSelect();
 };
 
 const exibirMensagem = (mensagem, type = MESSAGE_TYPE.ERROR) => {
-    strongMensagem.textContent = mensagem;
-    strongMensagem.className = type === MESSAGE_TYPE.ERROR ? 'error' : 'success';
+  strongMensagem.textContent = mensagem;
+  strongMensagem.className = type === MESSAGE_TYPE.ERROR ? "error" : "success";
 };
 
 const validarValor = (valor) => {
-    if (isNaN(valor) || valor <= 0) {
-        return false;
-    }
-    return true;
+  if (isNaN(valor) || valor <= 0) {
+    return false;
+  }
+  return true;
 };
 
 const atualizaSaldo = (contaAtual, saldo) => {
-    const contasSemContaAtual = contasClientes.filter((c) => c.id !== contaAtual.id);
-    const contaAtualizada = { ...contaAtual, saldo };
-    const contasAtualizadas = [...contasSemContaAtual, contaAtualizada];
+  const contasSemContaAtual = contasClientes.filter(
+    (c) => c.id !== contaAtual.id
+  );
+  const contaAtualizada = { ...contaAtual, saldo };
+  const contasAtualizadas = [...contasSemContaAtual, contaAtualizada];
 
-    contasClientes = contaAtualizada;
-    salvarContas(contasAtualizadas);
+  contasClientes = contaAtualizada;
+  salvarContas(contasAtualizadas);
 };
 
 const validarSaldo = (valor, saldo) => {
-    if (valor > saldo) {
-        return false;
-    }
-    return true;
+  if (valor > saldo) {
+    return false;
+  }
+  return true;
 };
 
 const obterConta = (contaId) => {
-    return contasClientes.find((conta) => conta.id === contaId);
+  return contasClientes.find((conta) => conta.id === contaId);
 };
 
 const sacar = (contaAtual, valor) => {
-    if (!validarValor(valor)) {
-        exibirMensagem('Valor Inválido. Verifique e tente novamente!');
-        return;
-    }
+  if (!validarValor(valor)) {
+    exibirMensagem("Valor Inválido. Verifique e tente novamente!");
+    return;
+  }
 
-    if (!validarSaldo(valor, contaAtual.saldo)) {
-        exibirMensagem(`Saldo Insuficiente. Saldo atual: ${contaAtual.saldo}`);
-        return;
-    }
-    atualizaSaldo(contaAtual, novoSaldo);
-    exibirMensagem(`Saque efetado com sucesso! Saldo atual: ${novoSaldo}.`, MESSAGE_TYPE.SUCCESS);
+  if (!validarSaldo(valor, contaAtual.saldo)) {
+    exibirMensagem(`Saldo Insuficiente. Saldo atual: ${contaAtual.saldo}`);
+    return;
+  }
+  atualizaSaldo(contaAtual, novoSaldo);
+  exibirMensagem(
+    `Saque efetado com sucesso! Saldo atual: ${novoSaldo}.`,
+    MESSAGE_TYPE.SUCCESS
+  );
 };
 
 const depositar = (contaAtual, valor) => {
-    if (!validarValor(valor)) {
-        exibirMensagem('Valor inválido. Verifique e tente novamente!');
-        return;
-    }
+  if (!validarValor(valor)) {
+    exibirMensagem("Valor inválido. Verifique e tente novamente!");
+    return;
+  }
 
-    const novoSaldo = contaAtual.saldo + valor;
-    atualizaSaldo(contaAtual, novoSaldo);
-    exibirMensagem(`Deposito efetuado com sucesso! Saldo atual: ${novoSaldo}.`, MESSAGE_TYPE.SUCCESS);
+  const novoSaldo = contaAtual.saldo + valor;
+  atualizaSaldo(contaAtual, novoSaldo);
+  exibirMensagem(
+    `Deposito efetuado com sucesso! Saldo atual: ${novoSaldo}.`,
+    MESSAGE_TYPE.SUCCESS
+  );
 };
 
 const realizarOperacao = (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const contaId = parseInt(event.target.conta.value);
-    const valor = parseFloat(event.target.operacao.value);
-    const operacao = parseInt(event.target.operacao.value);
-    const senha = event.target.senha.value;
+  const contaId = parseInt(event.target.conta.value);
+  const valor = parseFloat(event.target.operacao.value);
+  const operacao = parseInt(event.target.operacao.value);
+  const senha = event.target.senha.value;
 
-    if (!validarValor(contaId) || !validarValor(valor) || !validarValor(operacao)) {
-        exibirMensagem('Campos inválidos. Verifique e tente novamente.');
-        return;
-    }
+  if (
+    !validarValor(contaId) ||
+    !validarValor(valor) ||
+    !validarValor(operacao)
+  ) {
+    exibirMensagem("Campos inválidos. Verifique e tente novamente.");
+    return;
+  }
 
-    if (!senha) {
-        exibirMensagem('Informe a sneha!');
-        return;
-    }
+  if (!senha) {
+    exibirMensagem("Informe a sneha!");
+    return;
+  }
 
-    const contaAtual = obterConta(contaId);
-    if (!contaAtual) {
-        exibirMensagem('Conta não encontrada. Verifique e tente novamente.');
-        return;
-    }
+  const contaAtual = obterConta(contaId);
+  if (!contaAtual) {
+    exibirMensagem("Conta não encontrada. Verifique e tente novamente.");
+    return;
+  }
 
-    if (contaAtual.senha !== senha) {
-        exibirMensagem('Senha inválida!');
-        return;
-    }
+  if (contaAtual.senha !== senha) {
+    exibirMensagem("Senha inválida!");
+    return;
+  }
 
-    switch (operacao) {
-        case OPERACAO_CONTA.SACAR:
-            sacar(contaAtual, valor);
-            break;
-        case OPERACAO_CONTA.DEPOSITAR:
-            depositar(contaAtual, valor);
-            break;
-        default:
-            exibirMensagem('Operação inválida. Verifique e tente novamente.');
-            break;
-    }
+  switch (operacao) {
+    case OPERACAO_CONTA.SACAR:
+      sacar(contaAtual, valor);
+      break;
+    case OPERACAO_CONTA.DEPOSITAR:
+      depositar(contaAtual, valor);
+      break;
+    default:
+      exibirMensagem("Operação inválida. Verifique e tente novamente.");
+      break;
+  }
 };
 
 body.onload = onLoadBody;
