@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVinKnowledge</title>
+    <link rel="stylesheet" href="./style.css">
+    <link type="image" rel="icon" href="./images/fav-icons-knowledge-base.png.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Montserrat:wght@900&family=Mouse+Memoirs&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Rubik&display=swap" rel="stylesheet">    
+</head>
+
+<body>
+    <header>
+        <h1 class="fonte1-2">DEVinKnowledge</h1>
+        <p class="fonte2">Learn, Code and Save</p>
+    </header>
+
+    <main class="linha">
+        <form class="coluna-12" id="cadastroDica">
+            <div class="coluna-6 cor1 coluna-hover alturaMinima">
+                <div>
+                    <label for="tituloDica">Título</label>
+                    <input type="text" required minlength="8" maxlength="255" placeholder="Digite um título"
+                        class="formulario" id="tituloDica" name="tituloDica" />
+                </div>
+
+                <div>
+                    <label for="txtLinguagem">Linguagem ou Skill</label>
+                    <input type="text" required minlength="4" maxlength="64" placeholder="Qual uma linguagem ou skill"
+                        id="txtLinguagem" class="formulario" name="txtLinguagem" />
+                </div>
+
+                <div>
+                    <label for="ddlCategoria">Categoria</label>
+                    <select placeholder="Selecione uma categoria" id="ddlCategoria" class="formulario"
+                        name="ddlCategoria">
+                        <option value="FrontEnd">FrontEnd</option>
+                        <option value="BackEnd">BackEnd</option>
+                        <option value="FullStack">FullStack</option>
+                        <option value="SoftSkill">SoftSkill</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="descricaoDica">Descrição Completa</label>
+                    <textarea required minlength="32" maxlength="512" rows="8"
+                        placeholder="Digite aqui o detalhamento da sua dica..." class="formulario textarea1"
+                        name="descricaoDica" id="descricaoDica"></textarea>
+                </div>
+
+                <div>
+                    <label for="txtUrl">Video You Tube</label>
+                    <input type="url" placeholder="https://suaurl.com" id="txtUrl" class="formulario" name="txtUrl" />
+                </div>
+
+                <div class="buttonSalvar">
+                    <button type="button" onclick="cadastrar();" id="btnSalvar" class="btn-cor-1"
+                        value="btnSalvar">Salvar</button>
+                </div>
+
+                <div class="buttonSalvar" id="btnSalvar">
+                    <button type="button" onclick="limpar();" id="btnLimpar" class="btn-cor-1 btn-cor-2">Limpar
+                        dados</button>
+                </div>
+
+                <div class="buttonSalvar" id="btnSalvar">
+                    <button type="button" onclick="prencher();" id="btnPreencher" class="btn-cor-1 btn-cor-2 btn-cor-3">Preencher</button>
+                </div>
+        </form>
+        </div>
+
+        <div class="coluna-6 cor2 coluna-hover alturaMinima">
+            <div class="totalizadores">
+                <div class="divTotal">
+                    <h2>Total</h2>
+                    <span id="spnTotal">0</span>
+                </div>
+
+                <div class="divTotal">
+                    <h2>FronEnd</h2>
+                    <span id="spnFronEnd">0</span>
+                </div>
+
+                <div class="divTotal">
+                    <h2>BackEnd</h2>
+                    <span id="spnBackEnd">0</span>
+                </div>
+
+                <div class="divTotal">
+                    <h2>FullStack</h2>
+                    <span id="spnFullStack">0</span>
+                </div>
+
+                <div class="divTotal">
+                    <h2>SoftSkill</h2>
+                    <span id="spnSoftSkill">0</span>
+                </div>
+            </div>
+
+            <div style="clear:both"></div>
+
+            <div class="coluna-12">
+                <input type="text" required minlength="8" maxlength="255" placeholder="pesquisar...." class="formulario"
+                    id="txtPesquisar" onkeyup="pesquisaTabela()" />
+            </div>
+
+            <div class="scrolll1">
+                <div id="tdConteudo"></div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <script src="./index.js" defer></script>
+</body>
+
+</html>
+
+

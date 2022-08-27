@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Kalam", cursive, sans-serif;
+  color: #000000;
+  line-height: 1.8;
+}
+
+header {
+  padding: 10px;
+  margin: 10px;
+  background-color: #2bb8c8;
+  color: #000000;
+  flex-direction: row;
+  justify-content: left;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.8rem;
+  clear: both;
+}
+
+form {
+  display: flex;
+  flex-direction: row;  
+}
+
+.fonte1-2 {
+  width: auto;
+  font-size: 4rem;
+}
+.fonte2 {
+  width: 100%;
+  text-align: right;
+  font-size: 1rem;
+  color: #000;
+  display: inline;
+}
+
+.linha {
+  display: flex;  
+  flex-wrap: nowrap;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 15px;
+  width: 100%;
+  justify-content: start;
+}
+
+.coluna-12 {
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  width: 100%;
+  border-radius: 7px;
+  align-items: baseline;
+}
+
+.coluna-4 {
+  flex: 0 0 auto;
+  width: 33.333333333%;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+.coluna-6 {
+  flex: 0 0 auto;
+  width: 44%;
+  padding: 15px;
+  margin: 15px 15px 15px 0;
+  border: 1px solid #fff;
+  float: left;
+  border-radius: 7px;
+}
+
+.cor1 {
+  background-color: #e5b8e5;
+}
+
+.cor2 {
+  background-color: #97d673;
+}
+
+.alturaMinima {
+  min-height: 570px;
+}
+
+.coluna-hover:hover {
+  border: 1px solid #af49a1;
+}
+
+.formulario {
+  height: 30px;
+  color: #000;
+  border: 1px solid #342844;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding: 5px;
+  width: 100%;
+}
+
+.textarea1 {
+  height: 50px;
+}
+
+.btn-cor-1 {
+  padding: 12px 30px;
+  color: white;
+  text-align: center;
+  position: relative;
+  background-color: #af49a1;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 45px;
+}
+
+.btn-cor-2 {
+  background-color: #5d496d;
+}
+
+.btn-cor-3 {
+  background-color: #6b156d;
+}
+
+.buttonSalvar {
+  float: left;
+  margin: 10px;
+}
+
+.divTotal {
+  border: 1px #89a5dc;
+  width: 15%;
+  height: 100px;
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  background-color: #89a5dc;
+}
+
+.divTotal:hover {
+  border: 1px solid #e2a7e2;
+}
+
+.divTotal span {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.divTotal h2 {
+  font-size: 0.8rem;
+  margin: 1px;
+  padding: 2px;
+}
+
+table {
+  width: 95%;
+}
+
+table td {
+  border: 2px dashed #ede2ed;
+  padding: 10px;
+  margin: 5px;
+  background-color: #ede2ed;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.scrolll1 {
+  margin: 15px 0 15px 0;
+  overflow-y: scroll;
+  min-height: 200px;
+  max-height: 350px;
+}
+
+.div2 {
+  width: 100%;
+}
+
+.divOpcao {
+  text-align: right;
+  margin: 10px 0 0 0;
+}
+
+input {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  border-color: #e60084;
+}
+
+input,
+label {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: #e60084;
+}
